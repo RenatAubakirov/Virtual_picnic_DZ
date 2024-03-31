@@ -2,7 +2,15 @@ package com.programa;
 import java.io.File;
 import java.util.Map;
 
+/**
+ * Главный класс программы.
+ */
 public class Main {
+    /**
+     * Метод main, запускающий программу.
+     *
+     * @param args аргументы командной строки
+     */
     public static void main(String[] args) {
         File inputFile = new File("input.txt");
 
@@ -16,6 +24,6 @@ public class Main {
 
         WordFrequencyCalculator wordFrequencyCalculator = new WordFrequencyCalculator(inputFile);
         Map<String, Integer> wordFrequency = wordFrequencyCalculator.calculateWordFrequency();
-        System.out.println("Частота слов в файле: " + wordFrequency);
+        System.out.println("Слова, встречающиеся чаще всего в файле: " + wordFrequency);
     }
 }

@@ -4,13 +4,26 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/**
+ * Класс для подсчета количества слов в файле.
+ */
 public class WordCounter {
     private File file;
 
+    /**
+     * Конструктор класса.
+     *
+     * @param file файл для анализа
+     */
     public WordCounter(File file) {
         this.file = file;
     }
 
+    /**
+     * Метод для подсчета количества слов в файле.
+     *
+     * @return количество слов в файле
+     */
     public int countWords() {
         int wordCount = 0;
         try {
@@ -21,7 +34,7 @@ public class WordCounter {
             }
             scanner.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("Ошибка: Файл не найден");
         }
         return wordCount;
     }

@@ -4,13 +4,26 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/**
+ * Класс для поиска самого длинного слова в файле.
+ */
 public class LongestWordFinder {
     private File file;
 
+    /**
+     * Конструктор класса.
+     *
+     * @param file файл для анализа
+     */
     public LongestWordFinder(File file) {
         this.file = file;
     }
 
+    /**
+     * Метод для поиска самого длинного слова в файле.
+     *
+     * @return самое длинное слово в файле
+     */
     public String findLongestWord() {
         String longestWord = "";
         try {
@@ -23,7 +36,7 @@ public class LongestWordFinder {
             }
             scanner.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("Ошибка: Файл не найден");
         }
         return longestWord;
     }
